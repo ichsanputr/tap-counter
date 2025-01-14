@@ -60,7 +60,7 @@
     const historyList = document.getElementById('history-list');
 
     // Retrieve data from localStorage
-    let totalClicks = parseInt(localStorage.getItem('totalClicks')) || 0;
+    let totalClicks = 0;
     let saveHistory = JSON.parse(localStorage.getItem('saveHistory')) || [];
 
     // Update UI on page load
@@ -88,7 +88,6 @@
       saveHistory.push(`${totalClicks} kali di ${formattedTime}`);
 
       // Update localStorage
-      localStorage.setItem('totalClicks', totalClicks); // Save the current count
       localStorage.setItem('saveHistory', JSON.stringify(saveHistory));
 
       // Reset total clicks after saving
